@@ -1,5 +1,9 @@
 # Requirements for Sports Party
 
+Trello link: https://trello.com/b/qIJ5QTSB/sports-party-web-app 
+
+Wireframe link: https://trello.com/c/viMnM0zP/1-wireframe 
+
 ## Project Vision:
 - To create an app that can be used at a party for a football championship.
 - This is an entertainment app that can be used by all members attending the party to learn about the teams, vote and see voter results of all members attending the party.
