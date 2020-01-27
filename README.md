@@ -1,6 +1,9 @@
 # sports-party
 
-Corey DeJong
-Brandon Gibbs
-Anthony Cunningham
-Sue Tarazi
+## Site Developers Extraorinaire
+- Corey DeJong
+- Brandon Gibbs
+- Anthony Cunningham
+- Sue Tarazi
+
+

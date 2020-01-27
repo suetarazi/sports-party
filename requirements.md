@@ -15,7 +15,7 @@ Wireframe link: https://trello.com/c/viMnM0zP/1-wireframe
 - There needs to be a form for guests to fill out that will gather their name, which team they think will win, who they think the MVP will be and what the final score will be. 
 - Upon submission of the form, the guests input will be returned in a table that aggrates all the guest's votes.
 - Also a bar graph will be created of which team the guest's think will win, using the aggragate data.
-- As the admin, I would like to be able to update the score as the game goes on. A link to an admin page should exist in the navigation.
+- As the admin, I would like to be able to update the score as the game progresses on an adamin page that only I can access. A link to an admin page should exist in the navigation.
 - Provide links at the bottom of the page to external sports sites. 
 
 ## Scope In/Out:
@@ -50,4 +50,4 @@ Wireframe link: https://trello.com/c/viMnM0zP/1-wireframe
 
 ## Data Flow:
 - The guest arrives at the party and views the website. After seeing the teams's logo and reading the team stats, they have the opportunity to cast their vote. They will fill out their name, vote for which team they think will win, select an MVP from a pull-down, and cast their vote for final score. This information will then be returned to a table. Also the vote for the winning team will be presented in a bar graph. 
-- The admin of the site (party host) will be able to update the score via an admin page. The score will populate on the main page. 
+- The admin of the site (party host) will be able to be the only one to access the admin page in order to update the score. The score will populate on the main page. 
