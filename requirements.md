@@ -11,12 +11,12 @@ Wireframe link: https://trello.com/c/viMnM0zP/1-wireframe
 
 ## User Stories: 
 - As the admin and the host of the party, I would like to have an app available to allow for a fun way for attendees of my football championship party to interact. When they arrive at the party, the guests will visit the app on my computer. 
-- The site needs to have images of each team logo and information (basic stats) available for each team so my party guests can learn about each team.
-- There needs to be a form for guests to fill out that will gather their name, which team they think will win, who they think the MVP will be and what the final score will be. 
-- Upon submission of the form, the guests input will be returned in a table that aggrates all the guest's votes.
-- Also a bar graph will be created of which team the guest's think will win, using the aggragate data.
-- As the admin, I would like to be able to update the score as the game progresses on an adamin page that only I can access. A link to an admin page should exist in the navigation.
-- Provide links at the bottom of the page to external sports sites. 
+- As a user, i would like to quickly view information about the teams that are competing.
+- As a user, I would like to submit my vote on who will win, the MVP and the final score so that I can participate in the game 
+- The site will display the guests votes in a table.
+- Poll results of who guests think will win will be shown in a graph.
+- The party host (admin) will update the score as the game progresses on an adamin page. 
+- Users will have links external sports sites at the bottom of the page. 
 
 ## Scope In/Out:
 ### In:
