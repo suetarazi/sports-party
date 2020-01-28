@@ -5,7 +5,7 @@
 
 //Constructor Function to populate team image and stats
 function Team (img, teamName, teamRecord, ptsPerGame, ptsAllowedPerGame, avgYardsPerGame, avgYardsAllowedPerGame){
-    this.img = img; 
+    this.img = img;
     this.teamName = teamName; 
     this.teamRecord = teamRecord; 
     this.ptsPerGame = ptsPerGame;
@@ -13,7 +13,7 @@ function Team (img, teamName, teamRecord, ptsPerGame, ptsAllowedPerGame, avgYard
     this.avgYardsPerGame = avgYardsPerGame;
     this.avgyardsAllowedPerGame = avgYardsAllowedPerGame;
     
-    
+
 }
 
 //Instantations to populate team images and stats
