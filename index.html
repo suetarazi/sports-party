@@ -5,10 +5,136 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <!-- resetting browswer specific CSS properties -->
+        <link rel="stylesheet" href="reset.css"/>
+        <!-- custom css to style the app -->
+        <link rel="stylesheet" href="style.css"/>
     </head>
+
     <body>
-        <h1>Hello World!</h1>
+        <!-- NAVIGATION -- 
+            This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
+        <nav>
+            <a href="admin.html">Admin</a>            
+        </nav>
+
+        <!-- Top section that will hold both teams' info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
+        <main>
+            <div id="mainWrapper">
+                <h1> Coming Soon! Be Patient! Seriously...hold your horses!</h1>
+                <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
+                <div id="teamLeft" class="teamContainer">
+
+                    <img id="logo" src ="https://via.placeholder.com/150" />
+                    <div id="teamStats" class="leftStats"> </div>
+
+                </div>
+                <!-- Two separate boxes that will hold the 'Live' score for teamLeft and teamRight that will be updatd from the admin page -- And the voteGraph below which will be populated from the form data kept in Local Storage. (Middle Section)-->
+                <div id="scoreAndVotes">
+                    <div id="liveScoreLeft"> </div>
+                    <div id="liveScoreRight"> </div>
+                
+                </div>
+                <!-- Holds Team Logo and Basic Stas for team on the right (Right Section)-->
+                <div id="teamRight">
+                    
+                    <img id="logo" src ="https://via.placeholder.com/150" />
+                    <div id="teamStats" class="rightStats"> </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Registration FORM --
+            This is where we will collect a user's Name, their vote for Winer, MVP, and their guess on the final score. -->
+        <section id="formSection">        
+
+            <form id="votingForm">
+                <h3>Please register for the party here.</h3>
+                <p>Cast your vote for who you think will win</p>
+                <!-- Name -->
+                <fieldset id="userName">
+                    <label> Your Name: 
+                        <input type="text" value="">
+                    </label>
+                </fieldset>
+                <!-- Guess the winner -->
+                <fieldset id="guessWinner">
+                    <label> Who do you think will win?
+                        <label>
+                            <input type="radio">  San Fran
+                        </label>
+                        
+                        <label> 
+                            <input type="radio"> Kansas City
+                        </label>
+                    </label>
+                    
+                </fieldset>
+                <!-- Pick MVP -->
+                <fieldset>
+                    <label> Pick the game's MVP
+                        <select>
+                            <option>Please choose an MVP</option>
+                            <option>Jimmy Garappolo</option>
+                            <option>Patrick Mahomes</option>
+                            <option>Rahem Mostert</option>
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                        </select>
+                    </label>
+                </fieldset>
+                
+                <!-- Guess the final score -->
+                <fieldset id="guessScore">
+                    <label>
+                        <input type="number">
+                    </label>
+
+                    <label>
+                        <input type="number">
+                    </label>
+                    
+                </fieldset>
+
+            </form>
+
+        </section>
+        <!-- TABLE --
+            This is where the data from Local Storage will be populating a list of the people registered, with their name, vote for the winner, MVP, and guess of the final score. -->
+        <div>
+            <table id="userResultsTable">
+
+            </table>
+        </div>
+
+        <!-- Footer - This will have site info along with icons that will link to various social accounts relating to the game/teams. -->
+        <footer id="footer">
+            <div id="footerWrapper">
+                <div id="siteInfo">
+                    <p>Championship Party &copy;</p>
+                    <p>Built by the greatest team ever, Count Chocula</p>
+                </div>
+
+                <div id="links">
+                    <ul> <p>San Fran</p>
+                        <li>IG</li>
+                        <li>Twitter</li>
+                        <li>FB</li>
+                    </ul>
+                    <ul> <p>San Fran</p>
+                        <li>IG</li>
+                        <li>Twitter</li>
+                        <li>FB</li>
+                    </ul>
+
+
+                </div>
+             </div>
+        </footer>
+
+        <!-- link to the main javaScript file -->
         <script src="app.js"></script>
     </body>
 </html>
