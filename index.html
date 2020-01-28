@@ -5,10 +5,85 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="reset.css"/>
+        <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <nav>
+            <a href="admin.html">Admin</a>            
+        </nav>
+
+        <!-- Top section that will hold bot team info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
+        <main>
+            <h1> Coming Soon! Be Patient! Seriously...hold your horses!</h1>
+            <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
+            <div id="team-left" class="teamContainer">
+
+                <img id="logo" src ="https://via.placeholder.com/150" />
+                <div id="teamStats" class="leftStats"> </div>
+
+            </div>
+            <!-- Live score for teamLeft and teamRight with voteGraph below (Middle Section)-->
+            <div id="scoreAndVotes">
+                <div id="liveScoreLeft"> </div>
+                <div id="liveScoreRight"> </div>
+            
+            </div>
+            <!-- Holds Team Logo and Basic Stas for team on the right (Right Section)-->
+            <div id="team-right">
+                
+                <img id="logo" src ="https://via.placeholder.com/150" />
+                <div id="teamStats" class="rightStats"> </div>
+
+            </div>
+        </main>
+
+        <section>
+            <form id="votingForm">
+                <label>
+                    <input type="text" value="">
+                </label>
+                <label>
+                    <input type="radio">
+                    <input type="radio">
+                </label>
+                <label>
+                    <select></select>
+                </label>
+                
+                <fieldset>
+                    <label>
+                        <input type="number">
+                    </label>
+                    <input type="number"><label>
+                        <input type="number">
+                    </label>
+                    
+                </fieldset>
+
+            </form>
+
+        </section>
+
+        <div>
+            <table id="userResultsTable">
+
+            </table>
+        </div>
+
+        <footer id="footer">
+            <div id="footerWrapper">
+                <div id="siteInfo">
+
+                </div>
+
+                <div id="links">
+
+                </div>
+             </div>
+        </footer>
+
+
         <script src="app.js"></script>
     </body>
 </html>
