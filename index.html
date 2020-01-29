@@ -21,12 +21,12 @@
         <!-- Top section that will hold both teams' info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
         <main>
             <div id="mainWrapper">
-                <h1> Bowl of Supers</h1>
+                <h1>Bowl of Supers!</h1>
                 <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
                 <div id="teamLeft" class="teamContainer">
 
                     <img id="logo1" class="teamLeft" src ="/images/fortyNines-transparentBG.png" />
-                    <h3 class="teamName">Forty Nines</h3>
+                    <h3 class="teamName">San Francisco</h3>
                     <!-- Team stats  -->
                     <div id="leftStats" class="teamStats"> 
                         <!-- Stat Name -->
@@ -73,10 +73,10 @@
                 <div id="scoreAndVotes" class="teamContainer">
                     <div id="scoreBoxContainer">
                         <div id="liveScoreLeft" class="scoreBoxes">
-                            <p>25</p>
+                            <p id="homeScore"></p>
                         </div>
                         <div id="liveScoreRight" class="scoreBoxes"> 
-                            <p>17</p>
+                            <p id="awayScore"></p>
                         </div>
                         <!-- Chart for total user votes for the team they want to win -->
                     </div>
@@ -88,7 +88,7 @@
                 <div id="teamRight" class="teamContainer">
                     
                     <img id="logo2" class="teamRight" src ="/images/chefs-transparentBG.png" />
-                    <h3 class="teamName">Chefs</h3>
+                    <h3 class="teamName">Kansas City</h3>
                     <div id="rightStats" class="teamStats"> 
                         <!-- Stat Name -->
                         <ul class="statsName">
@@ -213,6 +213,7 @@
         </footer>
 
         <!-- link to the main javaScript file -->
+        <script src="admin.js"></script>
         <script src="app.js"></script>
     </body>
 </html>
