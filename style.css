@@ -52,10 +52,10 @@ h1 {
     margin: auto;
     margin-bottom: 14px;
 }
-.teamContainer {
+/* .teamContainer {
     width: 960px;
     margin: 0 auto;
-}
+} */
 
 #teamLeft, #scoreAndVotes, #teamRight {
     background-color: rgb(201, 45, 71);
@@ -126,10 +126,20 @@ fieldset {
     padding: 14px;
 }
 
-#guessScore input {
-    width: 45px;
+#guessScore {
+    margin-right: 10px; 
 }
 
+#guessScore input {
+    width: 45px;
+    margin-right: 3px; 
+}
+
+
+button {
+    margin-left: 15px;
+    background-color: lightgray;
+}
 
 
 /* Footer */
