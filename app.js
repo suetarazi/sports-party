@@ -24,11 +24,12 @@ var fortyNine = new Team('Forty Nine', '13W, 3L', 29.9, 18.9, 331, 304.8);
 var chief = new Team('Chief', '12W, 4L', 43.0, 20.2, 422.5, 402.0);
 //var teamsArray = [fortyNine, chief];
 
-function renderTeams(){
-    //function to write info from constructor function to the HTML page
-  document.getElementById('logo1').src = 'https://images.app.goo.gl/DEV4qKNWCA9kKYJKA';
-  document.getElementById('logo2').src = 'https://images.app.goo.gl/DEV4qKNWCA9kKYJKA';
-  var statsLI = document.createElement('ul');
+// **** Commented out for hard coding this information into the forward facing site. - Brandon **** 
+// function renderTeams(){
+//     //function to write info from constructor function to the HTML page
+//   document.getElementById('logo1').src = 'https://images.app.goo.gl/DEV4qKNWCA9kKYJKA';
+//   document.getElementById('logo2').src = 'https://images.app.goo.gl/DEV4qKNWCA9kKYJKA';
+//   var statsLI = document.createElement('ul');
 
 //   for(var j = 0; j < teamsArray.length; j++){
 //     console.log(teamsArray);
@@ -86,5 +87,5 @@ function renderTeams(){
 //   new UserVoting(userName, winner, mvp, score1, score2);
 
 // }
-renderTeams();
+// renderTeams();
 
