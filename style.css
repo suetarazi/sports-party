@@ -7,6 +7,7 @@ body {
 div {
     display: inline-block;
     margin-top: 40px;
+    /* background-color: pink; */
 }
 
 /* Navigation Bar */
@@ -38,7 +39,7 @@ main {
 h1 {
     font-size: 2.5rem;
     text-align: center;
-    margin: 25px 0px;
+    /* margin: 25px 0px; */
 }
 
 
@@ -52,11 +53,12 @@ h1 {
     margin-bottom: 14px;
 }
 /* .teamContainer {
-    width: 175px;
+    width: 960px;
+    margin: 0 auto;
 } */
 
 #teamLeft, #scoreAndVotes, #teamRight {
-    background-color: rgb(201, 45, 71);
+    /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
 }
@@ -71,10 +73,28 @@ h1 {
     margin: 15px 0px 65px 65px;
 }
 
-#teamStats {
+#logo1, #logo2{
+    width: 275px;
+    height: 275px;
+}
+
+#leftStats, #rightStats {
     background-color: darkslategray;
     height: 175px;
-    width: 50%;
+    width: 100%;
+}
+
+.teamName {
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 14px;
+}
+
+.statsName, .stats{
+    display: inline;
+    color: white;
+    font-size: 20px;
 }
 
 /* canvas {
@@ -108,10 +128,20 @@ fieldset {
     padding: 14px;
 }
 
-#guessScore input {
-    width: 45px;
+#guessScore {
+    margin-right: 10px; 
 }
 
+#guessScore input {
+    width: 45px;
+    margin-right: 3px; 
+}
+
+
+button {
+    margin-left: 15px;
+    background-color: lightgray;
+}
 
 
 /* Footer */
@@ -126,4 +156,11 @@ footer {
 
 #links {
     font-size: 20px;
+}
+
+/* Styling to admin */
+#scoreUpdateForm {
+    margin: auto;
+    width: 300px;
+    text-align: center;
 }
