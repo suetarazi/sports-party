@@ -5,10 +5,32 @@
         <title>Admin page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Score Update Admin Page</h1>
-        <script src="app.js" async defer></script>
+         <!-- NAVIGATION -- 
+            This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
+            <nav>
+                <a href="index.html">Home Page</a>            
+            </nav>
+    
+        <h1>Score Update Page</h1>
+
+        <form id="scoreUpdateForm"> 
+            <!-- Update the score -->
+                          <fieldset id="guessScore">
+                              <label> Home Team Score
+                                  <input type="number" name="homeTeamScore" id="homeTeamScore">
+                              </label>
+                                <br><br>
+                              <label> Visiting Team Score
+                                  <input type="number" name="visitingTeamScore" id="visitingTeamScore">
+                              </label>
+                              <br><br>
+                              <button type="submit">Submit Score Update!</button>
+                          </fieldset>
+            </form>
+
+        <script src="admin.js"></script>
     </body>
 </html>

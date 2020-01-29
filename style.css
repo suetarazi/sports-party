@@ -58,7 +58,7 @@ h1 {
 } */
 
 #teamLeft, #scoreAndVotes, #teamRight {
-    background-color: rgb(201, 45, 71);
+    /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
 }
@@ -93,6 +93,8 @@ h1 {
 
 .statsName, .stats{
     display: inline;
+    color: white;
+    font-size: 20px;
 }
 
 /* canvas {
@@ -154,4 +156,11 @@ footer {
 
 #links {
     font-size: 20px;
+}
+
+/* Styling to admin */
+#scoreUpdateForm {
+    margin: auto;
+    width: 300px;
+    text-align: center;
 }
