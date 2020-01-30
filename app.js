@@ -328,8 +328,8 @@ function renderChart(){
       datasets: [{
         label: 'Team',
         data: pollData,
-        // backgroundColor: ['rgba(232, 49, 23, 0.2)','rgba(255, 99, 132, 0.2)']
-        backgroundColor: ['red', 'yellow']
+        backgroundColor: ['rgba(199, 56, 69, 78)','rgba(239, 184, 52, 94)']
+        //backgroundColor: ['red', 'yellow']
       }]
     },
     options: {
