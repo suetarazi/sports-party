@@ -19,6 +19,7 @@ function handleSubmit(event){
   localStorage.setItem('homeTeamScore', homeTeamScore);
   localStorage.setItem('visitingTeamScore', visitingTeamScore);
   // rediect to index.html
+  document.location.href="/index.html";
 }
 
 //check if score is in storage
@@ -61,4 +62,8 @@ if (awayScore){
 
 //add event listener
 var scoreUpdateForm = document.getElementById('scoreUpdateForm');
-scoreUpdateForm.addEventListener('submit', handleSubmit);
+if(scoreUpdateForm) {
+  scoreUpdateForm.addEventListener('submit', handleSubmit);
+  
+  // scoreUpdateForm.innerHTML = ;
+}
