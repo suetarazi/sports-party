@@ -60,6 +60,7 @@ h1 {
 #pollChart {
     background-color: darkslategray;
     width: 290px;
+    color: white;
 }
 
 #teamLeft, #scoreAndVotes, #teamRight {
@@ -70,7 +71,7 @@ h1 {
 
 .scoreBoxes {
     width: 40px;
-    background-color:  rgb(233, 53, 21);
+    background-color: #D93030;
     color: white;
     font-size: 2.5rem;
     padding: 7px;
@@ -99,7 +100,7 @@ h1 {
 
 .statsName, .stats{
     display: inline;
-    color: rgb(172, 151, 34);
+    color: #D8D6D1;
     font-size: 23px;
     margin-left: 10px;
     margin-top: 50px;
@@ -158,7 +159,7 @@ footer {
     width: 100%;
     background-color: black;
     text-align: center;
-    color: rgb(224, 61, 61);
+    color: #D93030;
     display: block;
 }
 

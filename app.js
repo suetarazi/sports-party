@@ -158,7 +158,7 @@ function renderChart(){
   console.log('pd', pollData);
 
 
-
+  Chart.defaults.global.defaultFontColor = 'white';
   var ctx = document.getElementById('pollChart').getContext('2d');
   new Chart(ctx, {
     type: 'bar',
@@ -172,6 +172,11 @@ function renderChart(){
       }]
     },
     options: {
+      legend: {
+        labels:{
+          fontColor: '#fff'
+        }
+},
       scales: {
         yAxes: [{
           ticks: {
@@ -180,6 +185,19 @@ function renderChart(){
         }]
       }
     }
+  //   chartOptions =  { 
+  //     responsive: true, 
+  //     maintainAspectRatio: false, 
+  //     fontColor: 'red',
+  //     options:{
+  //         legend:{
+  //             labels:{
+  //                 fontColor:'white';//change the color
+  //             }
+  //         }
+  //     }
+  // };
   });
 }
 
+renderChart();
