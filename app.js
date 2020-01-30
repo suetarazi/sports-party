@@ -1,25 +1,5 @@
 
 
-<<<<<<< HEAD
-// //Global Variables
-// var teamInfo = [];
-// // var leftImage = document.getElementsById('logo1');
-// // var rightImage = document.getElementsById('logo2');
-// var teamStats1 = document.getElementById('leftStats'); //list 1
-// var teamStats2 = document.getElementById('rightStats'); //list 2
-
-// //Constructor Function to populate team image and stats
-// function Team (teamName, teamRecord, ptsPerGame, ptsAllowedPerGame, avgYardsPerGame, avgYardsAllowedPerGame){
-//   this.teamName = teamName;
-//   this.teamRecord = teamRecord;
-//   this.ptsPerGame = ptsPerGame;
-//   this.ptsAllowedPerGame = ptsAllowedPerGame;
-//   this.avgYardsPerGame = avgYardsPerGame;
-//   this.avgyardsAllowedPerGame = avgYardsAllowedPerGame;
-
-//   teamInfo.push(this);
-// }
-=======
 //Global Variables
 var teamInfo = [];
 // var leftImage = document.getElementsById('logo1');
@@ -63,7 +43,6 @@ var chief = new Team('Chief', '12W, 4L', 43.0, 20.2, 422.5, 402.0);
   statsLI.appendChild(teamStat);
   teamStats1.appendChild(statsLI);
 }
->>>>>>> 95bd3018b9bcf658a60d2fa503468f2c38f25e82
 
 // //Instantations to populate team images and stats
 // var fortyNine = new Team('Forty Nine', '13W, 3L', 29.9, 18.9, 331, 304.8);
@@ -133,10 +112,7 @@ var chief = new Team('Chief', '12W, 4L', 43.0, 20.2, 422.5, 402.0);
 //   new UserVoting(userName, winner, mvp, score1, score2);
 
 // }
-<<<<<<< HEAD
-=======
 // renderTeams();
->>>>>>> 95bd3018b9bcf658a60d2fa503468f2c38f25e82
 
 //Event listener
 var button = document.getElementById('voteButton');
