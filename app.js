@@ -28,7 +28,7 @@ var tableBody = document.getElementById('userResultsTable');
 // var chief = new Team('Chief', '12W, 4L', 43.0, 20.2, 422.5, 402.0);
 //var teamsArray = [fortyNine, chief];
 
-// **** Commented out for hard coding this information into the forward facing site. - Brandon **** 
+// **** Commented out for hard coding this information into the forward facing site. - Brandon ****
 // function renderTeams(){
 //     //function to write info from constructor function to the HTML page
 //   document.getElementById('logo1').src = 'https://images.app.goo.gl/DEV4qKNWCA9kKYJKA';
@@ -134,7 +134,7 @@ function Guest(name, winner, mvp, teamLeftScoreGuess, teamRightScoreGuess) {
   this.teamLeftScoreGuess = teamLeftScoreGuess;
   this.teamRightScoreGuess = teamRightScoreGuess;
 
- 
+
 }
 // Render Header Row for Table, populated with column headings
 function renderHeader() {
@@ -142,10 +142,10 @@ function renderHeader() {
   var guestName = document.createElement('th');
   guestName.textContent = 'Name';
   headerRow.appendChild(guestName);
-  tableBody.appendChild(headerRow);  
+  tableBody.appendChild(headerRow);
 
   for(var i = 0; i < guestInput.length; i++){
-    var results = document.createElement('th');    
+    var results = document.createElement('th');
 
     results.textContent = guestInput[i];
     headerRow.appendChild(results);
@@ -153,7 +153,7 @@ function renderHeader() {
 }
 
 Guest.prototype.body = function(){
- 
+
   var bodyRow = document.createElement('tr');
   tableBody.appendChild(bodyRow);
 
@@ -161,26 +161,26 @@ Guest.prototype.body = function(){
   guestName.textContent = this.name;
   console.log('NaME', this.name);
   bodyRow.appendChild(guestName);
-  
+
   for (var i = 0; i < guestInput.length; i++) {
     var guestSelections = document.createElement('td');
     if (i === 0) {
       guestSelections.textContent = this.winner;
     } else if (i === 1){
-      guestSelections.textContent = this.mvp;         
+      guestSelections.textContent = this.mvp;
     } else if (i === 2) {
-      guestSelections.textContent = this.teamLeftScoreGuess;      
+      guestSelections.textContent = this.teamLeftScoreGuess;
     } else if (i === 3) {
-      guestSelections.textContent = this.teamRightScoreGuess;      
+      guestSelections.textContent = this.teamRightScoreGuess;
     }
-    
+
     // `Thins the winner will be ${Guest.testing[i].winner}, and the MVP will be${Guest.testing[i].mvp} and the score will be ${Guest.testing[i].value} to ${Guest.testing[i].value}`;
     // console.log('hello from body loop',Guest.testing[i])
 
-    bodyRow.appendChild(guestSelections);      
+    bodyRow.appendChild(guestSelections);
   }
-       
-}
+
+};
 
 function render() {
   tableBody.innerHTML = null;
@@ -190,7 +190,7 @@ function render() {
   //   console.log('Hello from render land');
   //   Guest.testing[i].body();
   // }
-
+  
 }
 render();
 
@@ -203,25 +203,26 @@ Guest.testing = [];
 
 function handleSubmit(event){
   event.preventDefault();
-
+  
   var testing = event.target;
-
+  
   var name = testing.name.value;
   var winner = testing.winner.value;
   var mvp = testing.mvp.value;
   var tlsg = parseInt(testing.teamLeftScoreGuess.value);
   var trsg = parseInt(testing.teamRightScoreGuess.value);
-
+  
   var newGuest = new Guest(name, winner, mvp, tlsg, trsg);
-  console.log(newGuest);  
+  console.log(newGuest);
   Guest.testing.push(newGuest);
   // newGuestObject.push(newGuest);
   render();
   for (var i = 0; i < Guest.testing.length; i++) {
-    console.log('render for ', Guest.testing[i].name)
+    console.log('render for ', Guest.testing[i].name);
     Guest.testing[i].body();
   }
-
+  graphData();
+  renderChart();
 }
 console.log('is this running?');
 console.log('I am a new Guest', newGuestObject);
@@ -281,3 +282,65 @@ console.log('I am a new Guest', newGuestObject);
 // for(var i = 0; i < teamArray.length; i++);{
 //   console.log(teamArray[i].statWins, teamArray[i].statLosses);
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+////Winner Poll Graph//////
+
+var sfWins = 0;
+var kcWins = 0;
+
+function graphData() {
+  sfWins = 0;
+  kcWins = 0;
+  for(var i = 0; i<Guest.testing.length; i++){
+    if (Guest.testing[i].winner === 'Forty Nines'){
+      sfWins++;}
+    else if (Guest.testing[i].winner === 'Chefs'){
+      kcWins++;}
+    console.log('sf', sfWins, 'kc', kcWins);
+  }
+}
+
+
+function renderChart(){
+  var labelData = ['San Francisco', 'Kansas City'];
+  var pollData = [sfWins, kcWins];
+  console.log('ld', labelData);
+  console.log('pd', pollData);
+
+
+
+  var ctx = document.getElementById('pollChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labelData,
+      datasets: [{
+        label: 'Team',
+        data: pollData,
+        // backgroundColor: ['rgba(232, 49, 23, 0.2)','rgba(255, 99, 132, 0.2)']
+        backgroundColor: ['red', 'yellow']
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}
+

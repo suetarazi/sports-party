@@ -57,6 +57,11 @@ h1 {
     margin: 0 auto;
 } */
 
+#pollChart {
+    background-color: darkslategray;
+    width: 290px;
+}
+
 #teamLeft, #scoreAndVotes, #teamRight {
     /* background-color: rgb(201, 45, 71); */
     width: 30%;
