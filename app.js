@@ -125,8 +125,8 @@ function Guest(name, winner, mvp, teamLeftScoreGuess, teamRightScoreGuess) {
   this.name = name;
   this.winner = winner;
   this.mvp = mvp;
-  this.teamLeftScoreGuess = 0;
-  this.teamRightScoreGuess = 0;
+  this.teamLeftScoreGuess = teamLeftScoreGuess;
+  this.teamRightScoreGuess = teamRightScoreGuess;
 
  
 }
@@ -158,8 +158,19 @@ Guest.prototype.body = function(){
   
   for (var i = 0; i < guestInput.length; i++) {
     var guestSelections = document.createElement('td');
-    guestSelections.textContent = `Thins the winner will be ${Guest.testing[i].winner}, and the MVP will be${Guest.testing[i].mvp} and the score will be ${Guest.testing[i].tlsg} to ${Guest.testing[i].trsg}`;
-    console.log('hello from body loop',Guest.testing)
+    if (i === 0) {
+      guestSelections.textContent = this.winner;
+    } else if (i === 1){
+      guestSelections.textContent = this.mvp;         
+    } else if (i === 2) {
+      guestSelections.textContent = this.teamLeftScoreGuess;      
+    } else if (i === 3) {
+      guestSelections.textContent = this.teamRightScoreGuess;      
+    }
+    
+    // `Thins the winner will be ${Guest.testing[i].winner}, and the MVP will be${Guest.testing[i].mvp} and the score will be ${Guest.testing[i].value} to ${Guest.testing[i].value}`;
+    // console.log('hello from body loop',Guest.testing[i])
+
     bodyRow.appendChild(guestSelections);      
   }
        
@@ -192,16 +203,18 @@ function handleSubmit(event){
   var name = testing.name.value;
   var winner = testing.winner.value;
   var mvp = testing.mvp.value;
-  var tlsg = testing.teamLeftScoreGuess.value;
-  var trsg = testing.teamRightScoreGuess.value;
+  var tlsg = parseInt(testing.teamLeftScoreGuess.value);
+  var trsg = parseInt(testing.teamRightScoreGuess.value);
 
   var newGuest = new Guest(name, winner, mvp, tlsg, trsg);
   console.log(newGuest);  
   Guest.testing.push(newGuest);
   // newGuestObject.push(newGuest);
   render();
-  for (var i = 0; i < Guest.testing.length; i++){
-  Guest.testing[i].body();}
+  for (var i = 0; i < Guest.testing.length; i++) {
+    console.log('render for ', Guest.testing[i].name)
+    Guest.testing[i].body();
+  }
 
 }
 console.log('is this running?');
