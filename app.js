@@ -2,6 +2,8 @@
 
 //Global Variables
 var teamInfo = [];
+
+
 var tableBody = document.getElementById('userResultsTable');
 // var leftImage = document.getElementsById('logo1');
 // var rightImage = document.getElementsById('logo2');
@@ -20,6 +22,7 @@ var tableBody = document.getElementById('userResultsTable');
 //   teamInfo.push(this);
 // }
 
+
 //Instantations to populate team images and stats
 // var fortyNine = new Team('Forty Nine', '13W, 3L', 29.9, 18.9, 331, 304.8);
 // var chief = new Team('Chief', '12W, 4L', 43.0, 20.2, 422.5, 402.0);
@@ -35,6 +38,8 @@ var tableBody = document.getElementById('userResultsTable');
 //   for(var j = 0; j < teamsArray.length; j++){
 //     console.log(teamsArray);
 //   }
+
+
 //   for(var i = 0; i < teamInfo.length; i++){
 //     console.log(teamInfo);
 //     var teamStat = document.createElement('li');
@@ -44,6 +49,7 @@ var tableBody = document.getElementById('userResultsTable');
 //   statsLI.appendChild(teamStat);
 //   teamStats1.appendChild(statsLI);
 // }
+
 
 // //Instantations to populate team images and stats
 // var fortyNine = new Team('Forty Nine', '13W, 3L', 29.9, 18.9, 331, 304.8);
