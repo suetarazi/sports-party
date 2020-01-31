@@ -1,6 +1,6 @@
 body {
     font-family: fantasy;
-    background-image: url("/images/stadium.jpeg"); background-repeat: no-repat; border-image-repeat: vertical; background-size: 100%; position: sticky;
+    background-image: url("images/stadium.jpeg"); background-repeat: no-repat; border-image-repeat: vertical; background-size: 100%; position: sticky;
 
 }
 
