@@ -5,7 +5,7 @@ body {
     border-image-repeat: vertical; 
     background-size: cover; 
     background-attachment: fixed;
-
+    overflow-x: hidden;
 }
 
 #overlay {
@@ -67,28 +67,29 @@ h1 {
 }
 
 
-#pollChart {
-    background-color: darkslategray;
-    width: 100%;
-    color: white;    
-    /* position: relative;
-    bottom: 0px; */
-}
+
 
 #teamLeft, #teamRight {
     /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
-    margin-bottom: 14px;
-    
+    margin-bottom: 14px;    
+}
+
+#liveScoreRight {
+    margin-left: 100px;
 }
 
 #scoreAndVotes {
     width: 20%;
     position: relative;
     margin-left: 75px;
-    margin-right: 90px;
-    
+    margin-right: 90px;    
+}
+#scoreAndVotes #scoreBoxContainer {
+    position: relative;
+    margin: auto;
+    top: 0;
 }
 
 .scoreBoxes {
@@ -96,12 +97,24 @@ h1 {
     background-color: #D93030;
     color: white;
     font-size: 2.5rem;
-    position: aboslute;
-    top: 20%;
     padding: 7px;
     text-align: center;
     border-radius: 7px;
     /* margin: 10px 0px 55px 50px; */
+}
+
+/* #canvasContainer {
+    position: absolute;
+    bottom: 0;
+} */
+
+#pollChart {
+    background-color: darkslategray;
+    width: 100%;
+    color: white;
+    /* margin-top: 275px;     */
+    /* position: relative;
+    bottom: 0px; */
 }
 
 #logo1, #logo2{
@@ -115,6 +128,7 @@ h1 {
     height: 175px;
     width: 100%;
     border-radius: 7px;
+    padding-top: 20px;
 }
 
 .teamName {
@@ -132,43 +146,54 @@ h1 {
     margin-top: 50px;
 }
 
+/* This is weird Don't remove this commented out code or the extra bracket below it... for some reason, the styling breaks. I don't even know. 0_o */
 /* canvas {
     width: auto;
     /* height: 150px; */
-    /* display: block; */
-} */
+    /* /* display: block; */
+}
 
 
 
 /* Form and Table */
 
 #formSection {
-    width: 960px;
+    width: 1900px;
     margin: auto;
 }
 
-form {    
+form {   
+    height: 300px;
+    text-align: center;
     margin: auto;
     background-color: darkslategrey;
     padding: 40px;
     color: white;
 }
 form input, select {
-    height: 25px;
-    width: 175px;
+    height: 45px;
+    width: 195px;
+    margin: 1%;
     border-radius: 3px;
 }
 
 form input:hover, select:hover {
-    height: 25px;
-    width: 175px;
+    height: 45px;
+    width: 195px;
     border-radius: 3px;
     border-color: #888;
 }
 
-form > h3 p {
-    text-align: center;
+form h3 {
+    text-align: center; 
+    font-size: 1.7rem;
+
+}form p {
+    text-align: center; 
+    font-size: 1rem;
+    margin: 14px;
 }
+
 
 fieldset {
     display: inline;
@@ -187,21 +212,20 @@ fieldset {
     margin-right: 3px; 
 }
 
-
 #indexSubmit {
-    height: 55px;
+    height: 40px;
     width: 125px;
+    margin-top: 14px;
     border-radius: 7px;
     border: none;
     box-shadow: 2px 3px #181717;
-    margin-left: 15px;
     background-color: rgb(158, 24, 24);
 }
 
-/* #indexSubmit:hover {
+#indexSubmit:hover {
     width: 128px;
-    height: 57px;
-} */
+    height: 44px;
+}
 
 #indexSubmit:active {
     box-shadow: 2px 2px #181717;
@@ -210,10 +234,6 @@ fieldset {
 
 
 /* Table */
-/* section {
-    width: 1980px;
-    margin: auto;
-} */
 
 #tableContainer {
     width: 1020px;
@@ -225,11 +245,11 @@ fieldset {
     margin-left: 50px;
     width: 100%;
     text-align: center;
-    }
+}
 
 #userResultsTable th {
     border: 3px solid black;
-    }
+}
 
 #userResultsTable tr, td {
     border: medium solid black;
@@ -239,17 +259,30 @@ fieldset {
 
 /* Footer */
 
-footer {
+
+footer {    
     width: 100%;
     background-color: black;
     text-align: center;
     color: #D93030;
     display: block;
+    padding: 5px;
 }
-
-#links {
+#footerInner{
+    margin-bottom: 40px;
+    width: 600px;
+    padding: 10px;
+    
+}
+#footerLinksWrapper {
     font-size: 20px;
 }
+
+#footerLinks ul li{
+    display: inline;
+    margin: 40px;
+}
+
 
 /* Styling to admin */
 #scoreUpdateForm {
