@@ -1,0 +1,176 @@
+body {
+    font-family: fantasy;
+    background-image: url("./images/bigstadium.png") cover; 
+    /* background-repeat: no-repat; border-image-repeat: vertical; background-size: 100%; position: sticky; */
+
+}
+
+div {
+    display: inline-block;
+    margin-top: 40px;
+    /* background-color: pink; */
+}
+
+/* Navigation Bar */
+
+nav {
+    width: 100%;
+    height: 255px;
+    background-color: darkslategray;
+}
+
+nav a {
+    float: right;
+    margin-right: 75px;
+    margin-top: 19px;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Main */
+
+main {
+    width: 960px;
+    margin: auto;    
+}
+
+/* Header */
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    /* margin: 25px 0px; */
+}
+
+
+/* Team Images, Live Score, Total Votes */
+
+#mainWrapper {
+    width: 960px;
+    /* background-color: rgb(83, 146, 83); */
+    /* position: relative; */
+    margin: auto;
+    margin-bottom: 14px;
+}
+/* .teamContainer {
+    width: 960px;
+    margin: 0 auto;
+} */
+
+#pollChart {
+    background-color: darkslategray;
+    width: 290px;
+    color: white;
+}
+
+#teamLeft, #scoreAndVotes, #teamRight {
+    /* background-color: rgb(201, 45, 71); */
+    width: 30%;
+    position: relative;
+}
+
+.scoreBoxes {
+    width: 40px;
+    background-color: #D93030;
+    color: white;
+    font-size: 2.5rem;
+    padding: 7px;
+    text-align: center;
+    margin: 10px 0px 55px 50px;
+}
+
+#logo1, #logo2{
+    width: 250px;
+    margin-left: 20px;
+    /* height: 275px; */
+}
+
+#leftStats, #rightStats {
+    background-color: darkslategray;
+    height: 175px;
+    width: 100%;
+}
+
+.teamName {
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 14px;
+}
+
+.statsName, .stats{
+    display: inline;
+    color: #D8D6D1;
+    font-size: 23px;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+/* canvas {
+    width: auto;
+    /* height: 150px; */
+    /* display: block; */
+} */
+
+
+
+/* Form and Table */
+
+#formSection {
+    width: 960px;
+    margin: auto;
+}
+
+form {
+    
+    margin: auto;
+    background-color: darkslategrey;
+    padding: 35px;
+    color: white;
+}
+
+fieldset {
+    display: inline;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin: auto;
+    padding: 14px;
+}
+
+#guessScore {
+    margin-right: 10px; 
+}
+
+#guessScore input {
+    width: 45px;
+    margin-right: 3px; 
+}
+
+
+button {
+    margin-left: 15px;
+    background-color: lightgray;
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: #D93030;
+    display: block;
+}
+
+#links {
+    font-size: 20px;
+}
+
+/* Styling to admin */
+#scoreUpdateForm {
+    margin: auto;
+    width: 300px;
+    text-align: center;
+}
