@@ -1,7 +1,7 @@
 body {
     font-family: fantasy;
-    background-image: url("/images/bigstadium.png"); 
-    background-repeat: no-repeat; 
+    background-image: url("../images/bigstadium.png"); 
+    background-repeat: no-repeat;
     border-image-repeat: vertical; 
     background-size: cover; 
     background-attachment: fixed;
