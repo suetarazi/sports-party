@@ -1,7 +1,16 @@
 body {
     font-family: fantasy;
-    background-image: url("../images/stadium.jpeg"); background-repeat: no-repeat; border-image-repeat: vertical; background-size: 100%; position: sticky;
+    background-image: url("/images/bigstadium.png"); 
+    background-repeat: no-repeat; 
+    border-image-repeat: vertical; 
+    background-size: cover; 
+    background-attachment: fixed;
 
+}
+
+#overlay {
+    background-color: rgba(51, 51, 51, 0.4);
+    margin: 0;
 }
 
 div {
@@ -26,11 +35,14 @@ nav a {
     color: white;
 }
 
+a {
+    color: white;
+}
 
 /* Main */
 
 main {
-    width: 960px;
+    width: 1080px;
     margin: auto;    
 }
 
@@ -39,34 +51,44 @@ main {
 h1 {
     font-size: 2.5rem;
     text-align: center;
-    /* margin: 25px 0px; */
+    color: white;
+    margin: 14px;
 }
 
 
 /* Team Images, Live Score, Total Votes */
 
 #mainWrapper {
-    width: 960px;
+    width: 1080px;
     /* background-color: rgb(83, 146, 83); */
     /* position: relative; */
     margin: auto;
-    margin-bottom: 14px;
+    position: relative;
 }
-/* .teamContainer {
-    width: 960px;
-    margin: 0 auto;
-} */
+
 
 #pollChart {
     background-color: darkslategray;
-    width: 290px;
-    color: white;
+    width: 100%;
+    color: white;    
+    /* position: relative;
+    bottom: 0px; */
 }
 
-#teamLeft, #scoreAndVotes, #teamRight {
+#teamLeft, #teamRight {
     /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
+    margin-bottom: 14px;
+    
+}
+
+#scoreAndVotes {
+    width: 20%;
+    position: relative;
+    margin-left: 75px;
+    margin-right: 90px;
+    
 }
 
 .scoreBoxes {
@@ -74,9 +96,12 @@ h1 {
     background-color: #D93030;
     color: white;
     font-size: 2.5rem;
+    position: aboslute;
+    top: 20%;
     padding: 7px;
     text-align: center;
-    margin: 10px 0px 55px 50px;
+    border-radius: 7px;
+    /* margin: 10px 0px 55px 50px; */
 }
 
 #logo1, #logo2{
@@ -89,6 +114,7 @@ h1 {
     background-color: darkslategray;
     height: 175px;
     width: 100%;
+    border-radius: 7px;
 }
 
 .teamName {
@@ -121,12 +147,27 @@ h1 {
     margin: auto;
 }
 
-form {
-    
+form {    
     margin: auto;
     background-color: darkslategrey;
-    padding: 35px;
+    padding: 40px;
     color: white;
+}
+form input, select {
+    height: 25px;
+    width: 175px;
+    border-radius: 3px;
+}
+
+form input:hover, select:hover {
+    height: 25px;
+    width: 175px;
+    border-radius: 3px;
+    border-color: #888;
+}
+
+form > h3 p {
+    text-align: center;
 }
 
 fieldset {
@@ -147,9 +188,52 @@ fieldset {
 }
 
 
-button {
+#indexSubmit {
+    height: 55px;
+    width: 125px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 2px 3px #181717;
     margin-left: 15px;
-    background-color: lightgray;
+    background-color: rgb(158, 24, 24);
+}
+
+/* #indexSubmit:hover {
+    width: 128px;
+    height: 57px;
+} */
+
+#indexSubmit:active {
+    box-shadow: 2px 2px #181717;
+    transform: translateY(4px);
+}
+
+
+/* Table */
+/* section {
+    width: 1980px;
+    margin: auto;
+} */
+
+#tableContainer {
+    width: 1020px;
+    margin: auto;
+    padding: 50px;
+}
+#userResultsTable {
+    background-color: rgb(218, 218, 218);
+    margin-left: 50px;
+    width: 100%;
+    text-align: center;
+    }
+
+#userResultsTable th {
+    border: 3px solid black;
+    }
+
+#userResultsTable tr, td {
+    border: medium solid black;
+    padding: 3px;
 }
 
 

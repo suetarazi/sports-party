@@ -9,22 +9,22 @@
     <!-- resetting browswer specific CSS properties -->
     <link rel="stylesheet" href="css/reset.css" />
     <!-- custom css to style the app -->
-    <link rel="stylesheet" href="css/style.css" />
-    
+    <link rel="stylesheet" href="css/style.css" />    
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
 
 <body>
     <!-- NAVIGATION -- 
-            This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
-    <nav>
-        <a href="admin.html">Admin</a>
-    </nav>
-
+        This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
+        <nav>
+            <a href="admin.html">Admin</a>
+        </nav>
+        
+        <div id = "overlay">
     <!-- Top section that will hold both teams' info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
     <main>
+        <h1>Bowl of Supers!</h1>
         <div id="mainWrapper">
-            <h1>Bowl of Supers!</h1>
             <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
             <div id="teamLeft" class="teamContainer">
 
@@ -156,13 +156,14 @@
 
             <!-- Guess the final score -->
             <fieldset id="guessScore">
-                <label> Guess the Final Score
+                <p>Guess the Final Score:</p><br>
+                <label> 49s
                     <input type="number" name="teamLeftScoreGuess">
                 </label>
-                <label>
+                <label>Chefs
                     <input type="number" name="teamRightScoreGuess">
                 </label>
-                <button type="submit">Submit Your Vote!</button>
+                <button id = "indexSubmit" type="submit">Submit Your Vote!</button>
             </fieldset>
 
         </form>
@@ -192,7 +193,7 @@
 
         </div>
     </footer>
-
+    </div>
     <!-- link to the main javaScript file -->
     <script src="js/admin.js"></script>
     <script src="js/app.js"></script>
