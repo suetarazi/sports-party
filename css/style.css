@@ -1,7 +1,16 @@
 body {
     font-family: fantasy;
-    background-image: url("../images/stadium.jpeg"); background-repeat: no-repeat; border-image-repeat: vertical; background-size: 100%; position: sticky;
+    background-image: url("/images/bigstadium.png"); 
+    background-repeat: no-repeat; 
+    border-image-repeat: vertical; 
+    background-size: cover; 
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
 
+#overlay {
+    background-color: rgba(51, 51, 51, 0.4);
+    margin: 0;
 }
 
 div {
@@ -26,11 +35,14 @@ nav a {
     color: white;
 }
 
+a {
+    color: white;
+}
 
 /* Main */
 
 main {
-    width: 960px;
+    width: 1080px;
     margin: auto;    
 }
 
@@ -39,34 +51,45 @@ main {
 h1 {
     font-size: 2.5rem;
     text-align: center;
-    /* margin: 25px 0px; */
+    color: white;
+    margin: 14px;
 }
 
 
 /* Team Images, Live Score, Total Votes */
 
 #mainWrapper {
-    width: 960px;
+    width: 1080px;
     /* background-color: rgb(83, 146, 83); */
     /* position: relative; */
     margin: auto;
-    margin-bottom: 14px;
-}
-/* .teamContainer {
-    width: 960px;
-    margin: 0 auto;
-} */
-
-#pollChart {
-    background-color: darkslategray;
-    width: 290px;
-    color: white;
+    position: relative;
 }
 
-#teamLeft, #scoreAndVotes, #teamRight {
+
+
+
+#teamLeft, #teamRight {
     /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
+    margin-bottom: 14px;    
+}
+
+#liveScoreRight {
+    margin-left: 100px;
+}
+
+#scoreAndVotes {
+    width: 20%;
+    position: relative;
+    margin-left: 75px;
+    margin-right: 90px;    
+}
+#scoreAndVotes #scoreBoxContainer {
+    position: relative;
+    margin: auto;
+    top: 0;
 }
 
 .scoreBoxes {
@@ -76,7 +99,22 @@ h1 {
     font-size: 2.5rem;
     padding: 7px;
     text-align: center;
-    margin: 10px 0px 55px 50px;
+    border-radius: 7px;
+    /* margin: 10px 0px 55px 50px; */
+}
+
+/* #canvasContainer {
+    position: absolute;
+    bottom: 0;
+} */
+
+#pollChart {
+    background-color: darkslategray;
+    width: 100%;
+    color: white;
+    /* margin-top: 275px;     */
+    /* position: relative;
+    bottom: 0px; */
 }
 
 #logo1, #logo2{
@@ -89,6 +127,8 @@ h1 {
     background-color: darkslategray;
     height: 175px;
     width: 100%;
+    border-radius: 7px;
+    padding-top: 20px;
 }
 
 .teamName {
@@ -106,28 +146,54 @@ h1 {
     margin-top: 50px;
 }
 
+/* This is weird Don't remove this commented out code or the extra bracket below it... for some reason, the styling breaks. I don't even know. 0_o */
 /* canvas {
     width: auto;
     /* height: 150px; */
-    /* display: block; */
-} */
+    /* /* display: block; */
+}
 
 
 
 /* Form and Table */
 
 #formSection {
-    width: 960px;
+    width: 1900px;
     margin: auto;
 }
 
-form {
-    
+form {   
+    height: 300px;
+    text-align: center;
     margin: auto;
     background-color: darkslategrey;
-    padding: 35px;
+    padding: 40px;
     color: white;
 }
+form input, select {
+    height: 45px;
+    width: 195px;
+    margin: 1%;
+    border-radius: 3px;
+}
+
+form input:hover, select:hover {
+    height: 45px;
+    width: 195px;
+    border-radius: 3px;
+    border-color: #888;
+}
+
+form h3 {
+    text-align: center; 
+    font-size: 1.7rem;
+
+}form p {
+    text-align: center; 
+    font-size: 1rem;
+    margin: 14px;
+}
+
 
 fieldset {
     display: inline;
@@ -146,26 +212,77 @@ fieldset {
     margin-right: 3px; 
 }
 
+#indexSubmit {
+    height: 40px;
+    width: 125px;
+    margin-top: 14px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 2px 3px #181717;
+    background-color: rgb(158, 24, 24);
+}
 
-button {
-    margin-left: 15px;
-    background-color: lightgray;
+#indexSubmit:hover {
+    width: 128px;
+    height: 44px;
+}
+
+#indexSubmit:active {
+    box-shadow: 2px 2px #181717;
+    transform: translateY(4px);
+}
+
+
+/* Table */
+
+#tableContainer {
+    width: 1020px;
+    margin: auto;
+    padding: 50px;
+}
+#userResultsTable {
+    background-color: rgb(218, 218, 218);
+    margin-left: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+#userResultsTable th {
+    border: 3px solid black;
+}
+
+#userResultsTable tr, td {
+    border: medium solid black;
+    padding: 3px;
 }
 
 
 /* Footer */
 
-footer {
+
+footer {    
     width: 100%;
     background-color: black;
     text-align: center;
     color: #D93030;
     display: block;
+    padding: 5px;
 }
-
-#links {
+#footerInner{
+    margin-bottom: 40px;
+    width: 600px;
+    padding: 10px;
+    
+}
+#footerLinksWrapper {
     font-size: 20px;
 }
+
+#footerLinks ul li{
+    display: inline;
+    margin: 40px;
+}
+
 
 /* Styling to admin */
 #scoreUpdateForm {
