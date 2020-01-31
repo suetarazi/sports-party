@@ -19,7 +19,7 @@ function handleSubmit(event){
   localStorage.setItem('homeTeamScore', homeTeamScore);
   localStorage.setItem('visitingTeamScore', visitingTeamScore);
   // rediect to index.html
-  document.location.href='../';
+  document.location.href='/sports-party';
 }
 
 //check if score is in storage
