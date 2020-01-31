@@ -57,31 +57,53 @@ h1 {
     margin: 0 auto;
 } */
 
+#pollChart {
+    background-color: darkslategray;
+    width: 290px;
+    color: white;
+}
+
 #teamLeft, #scoreAndVotes, #teamRight {
-    background-color: rgb(201, 45, 71);
+    /* background-color: rgb(201, 45, 71); */
     width: 30%;
     position: relative;
 }
 
 .scoreBoxes {
     width: 40px;
-    background-color: blue;
+    background-color: #D93030;
     color: white;
     font-size: 2.5rem;
     padding: 7px;
     text-align: center;
-    margin: 15px 0px 65px 65px;
+    margin: 10px 0px 55px 50px;
 }
 
 #logo1, #logo2{
-    width: 275px;
-    height: 275px;
+    width: 250px;
+    margin-left: 20px;
+    /* height: 275px; */
 }
 
 #leftStats, #rightStats {
     background-color: darkslategray;
     height: 175px;
-    width: 50%;
+    width: 100%;
+}
+
+.teamName {
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 14px;
+}
+
+.statsName, .stats{
+    display: inline;
+    color: #D8D6D1;
+    font-size: 23px;
+    margin-left: 10px;
+    margin-top: 50px;
 }
 
 /* canvas {
@@ -137,10 +159,17 @@ footer {
     width: 100%;
     background-color: black;
     text-align: center;
-    color: white;
+    color: #D93030;
     display: block;
 }
 
 #links {
     font-size: 20px;
+}
+
+/* Styling to admin */
+#scoreUpdateForm {
+    margin: auto;
+    width: 300px;
+    text-align: center;
 }
