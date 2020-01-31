@@ -1,198 +1,200 @@
 <!DOCTYPE <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- resetting browswer specific CSS properties -->
-        <link rel="stylesheet" href="reset.css"/>
-        <!-- custom css to style the app -->
-        <link rel="stylesheet" href="style.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    </head>
 
-    <body>
-        <!-- NAVIGATION -- 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- resetting browswer specific CSS properties -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- custom css to style the app -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVIGATION -- 
             This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
-        <nav>
-            <a href="admin.html">Admin</a>            
-        </nav>
+    <nav>
+        <a href="admin.html">Admin</a>
+    </nav>
 
-        <!-- Top section that will hold both teams' info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
-        <main>
-            <div id="mainWrapper">
-                <h1>Bowl of Supers!</h1>
-                <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
-                <div id="teamLeft" class="teamContainer">
+    <!-- Top section that will hold both teams' info/logo on left and right with a div in the middle that contains live scores for both teams and graph that shows voting results -->
+    <main>
+        <div id="mainWrapper">
+            <h1>Bowl of Supers!</h1>
+            <!-- Holds Team Logo and Basic stats for team on the left (Left Section)-->
+            <div id="teamLeft" class="teamContainer">
 
-                    <img id="logo1" class="teamLeft" src ="/images/fortyNines-transparentBG.png" />
-                    <h3 class="teamName">San Francisco</h3>
-                    <!-- Team stats  -->
-                    <div id="leftStats" class="teamStats"> 
-                        <!-- Stat Name -->
-                        <table class="statsName">
-                            <tr>
-                                <td>Team Record:</td>
-                                <td>   13-3</td>
-                            </tr>
-                            <tr>    
-                                <td>Avg Pts/Game:</td> 
-                                <td>   29.9</td>
-                            </tr>
-                            <tr>
-                                <td>Avg Pts. Allowed / Game:</td>
-                                <td>   18.9</td>
-                            </tr>
-                                <td>Avg. Yards/Game:</td>
-                                <td>   331</td>
-                                        
-                            <tr>
-                               <td> Avg Yds Allowed / Game:</td>  
-                               <td>   304</td>                         
-                            </tr>                                                    
-                        </table>
+                <img id="logo1" class="teamLeft" src="images/fortyNines-transparentBG.png" />
+                <h3 class="teamName">San Francisco</h3>
+                <!-- Team stats  -->
+                <div id="leftStats" class="teamStats">
+                    <!-- Stat Name -->
+                    <table class="statsName">
+                        <tr>
+                            <td>Team Record:</td>
+                            <td> 13-3</td>
+                        </tr>
+                        <tr>
+                            <td>Avg Pts/Game:</td>
+                            <td> 29.9</td>
+                        </tr>
+                        <tr>
+                            <td>Avg Pts. Allowed / Game:</td>
+                            <td> 18.9</td>
+                        </tr>
+                        <td>Avg. Yards/Game:</td>
+                        <td> 331</td>
 
-                    </div>
+                        <tr>
+                            <td> Avg Yds Allowed / Game:</td>
+                            <td> 304</td>
+                        </tr>
+                    </table>
 
                 </div>
-                <!-- Two separate boxes that will hold the 'Live' score for teamLeft and teamRight that will be updatd from the admin page -- And the voteGraph below which will be populated from the form data kept in Local Storage. (Middle Section)-->
-                <div id="scoreAndVotes" class="teamContainer">
-                    <div id="scoreBoxContainer">
-                        <div id="liveScoreLeft" class="scoreBoxes">
-                            <p id="homeScore"></p>
-                        </div>
-                        <div id="liveScoreRight" class="scoreBoxes"> 
-                            <p id="awayScore"></p>
-                        </div>
-                        <!-- Chart for total user votes for the team they want to win -->
+
+            </div>
+            <!-- Two separate boxes that will hold the 'Live' score for teamLeft and teamRight that will be updatd from the admin page -- And the voteGraph below which will be populated from the form data kept in Local Storage. (Middle Section)-->
+            <div id="scoreAndVotes" class="teamContainer">
+                <div id="scoreBoxContainer">
+                    <div id="liveScoreLeft" class="scoreBoxes">
+                        <p id="homeScore"></p>
                     </div>
-                    <div id="canvasContainer">
+                    <div id="liveScoreRight" class="scoreBoxes">
+                        <p id="awayScore"></p>
+                    </div>
+                    <!-- Chart for total user votes for the team they want to win -->
+                </div>
+                <div id="canvasContainer">
                     <canvas id="pollChart" class="teamContainer"></canvas>
-                    </div>
-                </div>
-                <!-- Holds Team Logo and Basic Stas for team on the right (Right Section)-->
-                <div id="teamRight" class="teamContainer">
-                    
-                    <img id="logo2" class="teamRight" src ="/images/chefs-transparentBG.png" />
-                    <h3 class="teamName">Kansas City</h3>
-                    <div id="rightStats" class="teamStats"> 
-                        <!-- Stat Name -->
-                        <table class="statsName">
-                            <tr>
-                                <td>Team Record:</td>
-                                <td>   12-4</td>
-                            </tr>
-                            <tr>    
-                                <td>Avg Pts/Game:</td> 
-                                <td>   43.0</td>
-                            </tr>
-                            <tr>
-                                <td>Avg Pts. Allowed / Game:</td>
-                                <td>   20.2</td>
-                            </tr>
-                                <td>Avg. Yards/Game:</td>
-                                <td>   422</td>
-                                        
-                            <tr>
-                               <td> Avg Yds Allowed / Game:</td>  
-                               <td>   402</td>                         
-                            </tr>                                                    
-                        </table>
-                    </div>
-
                 </div>
             </div>
-        </main>
+            <!-- Holds Team Logo and Basic Stas for team on the right (Right Section)-->
+            <div id="teamRight" class="teamContainer">
 
-        <!-- Registration FORM --
+                <img id="logo2" class="teamRight" src="images/chefs-transparentBG.png" />
+                <h3 class="teamName">Kansas City</h3>
+                <div id="rightStats" class="teamStats">
+                    <!-- Stat Name -->
+                    <table class="statsName">
+                        <tr>
+                            <td>Team Record:</td>
+                            <td> 12-4</td>
+                        </tr>
+                        <tr>
+                            <td>Avg Pts/Game:</td>
+                            <td> 43.0</td>
+                        </tr>
+                        <tr>
+                            <td>Avg Pts. Allowed / Game:</td>
+                            <td> 20.2</td>
+                        </tr>
+                        <td>Avg. Yards/Game:</td>
+                        <td> 422</td>
+
+                        <tr>
+                            <td> Avg Yds Allowed / Game:</td>
+                            <td> 402</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Registration FORM --
             This is where we will collect a user's Name, their vote for Winer, MVP, and their guess on the final score. -->
-        <section id="formSection">        
+    <section id="formSection">
 
-            <form id="votingForm">
-                <h3>Please register for the party here.</h3>
-                <p>Cast your vote for who you think will win</p>
-                <!-- Name -->
-                <fieldset id="userName">
-                    <label> Your Name: 
-                        <input type="text" name="name">
-                    </label>
-                </fieldset>
-                <!-- Guess the winner -->
-                <fieldset id="guessWinner">
-                    <label> Who do you think will win?
-                        <select name = "winner">
-                            <option>Please Pick A Winner</option>
-                            <option>Forty Nines</option>
-                            <option>Chefs</option>                            
-                        </select>
+        <form id="votingForm">
+            <h3>Please register for the party here.</h3>
+            <p>Cast your vote for who you think will win</p>
+            <!-- Name -->
+            <fieldset id="userName">
+                <label> Your Name:
+                    <input type="text" name="name">
+                </label>
+            </fieldset>
+            <!-- Guess the winner -->
+            <fieldset id="guessWinner">
+                <label> Who do you think will win?
+                    <select name="winner">
+                        <option>Please Pick A Winner</option>
+                        <option>Forty Nines</option>
+                        <option>Chefs</option>
+                    </select>
 
-                        <!-- <label>  ***** Making radio buttons a stretch goal to save time from having to research radio related isues. ***
+                    <!-- <label>  ***** Making radio buttons a stretch goal to save time from having to research radio related isues. ***
                             <input type="radio" name="fourNines">  San Fran
                         </label>
                         
                         <label> 
                             <input type="radio" name="chefs"> Kansas City
                         </label> -->
-                    </label>
-                    
-                </fieldset>
-                <!-- Pick MVP -->
-                <fieldset>
-                    <label> Pick the game's MVP
-                        <select name = "mvp">
-                            <option>Please choose an MVP</option>
-                            <option>Jimmy Garappolo</option>
-                            <option>Rahem Mostert</option>
-                            <option>Richard Sherman</option>
-                            <option>Patrick Mahomes</option>
-                            <option>Tyreek Hill</option>
-                            <option>Travis Kelce</option>
-                        </select>
-                    </label>
-                </fieldset>
-                
-                <!-- Guess the final score -->
-                <fieldset id="guessScore">
-                    <label> Guess the Final Score
-                        <input type="number" name="teamLeftScoreGuess">
-                    </label>
-                    <label>
-                        <input type="number" name="teamRightScoreGuess">
-                    </label>
-                    <button type="submit">Submit Your Vote!</button>
-                </fieldset>
+                </label>
 
-            </form>
+            </fieldset>
+            <!-- Pick MVP -->
+            <fieldset>
+                <label> Pick the game's MVP
+                    <select name="mvp">
+                        <option>Please choose an MVP</option>
+                        <option>Jimmy Garappolo</option>
+                        <option>Rahem Mostert</option>
+                        <option>Richard Sherman</option>
+                        <option>Patrick Mahomes</option>
+                        <option>Tyreek Hill</option>
+                        <option>Travis Kelce</option>
+                    </select>
+                </label>
+            </fieldset>
 
-        </section>
-        <!-- TABLE --
+            <!-- Guess the final score -->
+            <fieldset id="guessScore">
+                <label> Guess the Final Score
+                    <input type="number" name="teamLeftScoreGuess">
+                </label>
+                <label>
+                    <input type="number" name="teamRightScoreGuess">
+                </label>
+                <button type="submit">Submit Your Vote!</button>
+            </fieldset>
+
+        </form>
+
+    </section>
+    <!-- TABLE --
             This is where the data from Local Storage will be populating a list of the people registered, with their name, vote for the winner, MVP, and guess of the final score. -->
-        <div id="tableContainer">
-            <table id="userResultsTable">
+    <div id="tableContainer">
+        <table id="userResultsTable">
 
-            </table>
-        </div>
+        </table>
+    </div>
 
-        <!-- Footer - This will have site info along with icons that will link to various social accounts relating to the game/teams. -->
-        <footer id="footer">
-            <div id="footerWrapper">
-                <div id="links">
-                    <ul> 
+    <!-- Footer - This will have site info along with icons that will link to various social accounts relating to the game/teams. -->
+    <footer id="footer">
+        <div id="footerWrapper">
+            <div id="links">
+                <ul>
                     <li><a href="https://www.espn.com/" target="_blank">ESPN</a></li>
-                    <li><a href="https://www.foxsports.com/"target="_blank">FoxSports</a></li>
-                    </ul>
-                </div>
-                </br>
-                <br>
-                <p>Bowl of Supers &copy;</p>
-                <p>Built by the greatest team ever, Count Chocula</p>
+                    <li><a href="https://www.foxsports.com/" target="_blank">FoxSports</a></li>
+                </ul>
+            </div>
+            </br>
+            <br>
+            <p>Bowl of Supers &copy;</p>
+            <p>Built by the greatest team ever, Count Chocula</p>
 
-             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <!-- link to the main javaScript file -->
-        <script src="admin.js"></script>
-        <script src="app.js"></script>
-    </body>
+    <!-- link to the main javaScript file -->
+    <script src="js/admin.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
 </html>

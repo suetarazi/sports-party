@@ -1,40 +1,43 @@
 <!DOCTYPE <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Admin page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-         <!-- NAVIGATION -- 
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -- 
             This will link to the admin page / possibly a link down to the results of voting. *Stretch GOAL: this will link to the results that will be on a separate page. -->
-            <nav>
-                <a href="index.html">Home Page</a>            
-            </nav>
-    
-        <h1>Score Update Page</h1>
+    <nav>
+        <a href="index.html">Home Page</a>
+    </nav>
 
-        <form id="scoreUpdateForm"> 
-            <!-- Update the score -->
-                          <fieldset id="guessScore">
-                              <label> Home Team Score
-                                  <input type="number" name="homeTeamScore" id="homeTeamScore">
-                              </label>
-                                <br><br>
-                              <label> Visiting Team Score
-                                  <input type="number" name="visitingTeamScore" id="visitingTeamScore">
-                              </label>
-                              <br><br>
-                              <button type="submit">Submit Score Update!</button>
-                          </fieldset>
-            </form>
+    <h1>Score Update Page</h1>
 
-            <!-- <p id="testOutput">
+    <form id="scoreUpdateForm">
+        <!-- Update the score -->
+        <fieldset id="guessScore">
+            <label> Home Team Score
+                <input type="number" name="homeTeamScore" id="homeTeamScore">
+            </label>
+            <br><br>
+            <label> Visiting Team Score
+                <input type="number" name="visitingTeamScore" id="visitingTeamScore">
+            </label>
+            <br><br>
+            <button type="submit">Submit Score Update!</button>
+        </fieldset>
+    </form>
+
+    <!-- <p id="testOutput">
                 The score is: 
             </p> -->
 
-        <script src="admin.js"></script>
-    </body>
+    <script src="js/admin.js"></script>
+</body>
+
 </html>

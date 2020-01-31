@@ -24,25 +24,25 @@ function renderHeader() {
   var guestName = document.createElement('th');
   guestName.textContent = 'Name';
   headerRow.appendChild(guestName);
-// <<<<<<< appJS
-  tableBody.appendChild(headerRow);  
-  
-  for(var i = 0; i < guestInput.length; i++){
-    var results = document.createElement('th');    
-    
-// =======
-//   tableBody.appendChild(headerRow);
+  // <<<<<<< appJS
+  tableBody.appendChild(headerRow);
 
-//   for(var i = 0; i < guestInput.length; i++){
-//     var results = document.createElement('th');
+  for (var i = 0; i < guestInput.length; i++) {
+    var results = document.createElement('th');
 
-// >>>>>>> staging
+    // =======
+    //   tableBody.appendChild(headerRow);
+
+    //   for(var i = 0; i < guestInput.length; i++){
+    //     var results = document.createElement('th');
+
+    // >>>>>>> staging
     results.textContent = guestInput[i];
     headerRow.appendChild(results);
   }
 }
 
-Guest.prototype.body = function(){
+Guest.prototype.body = function () {
   var bodyRow = document.createElement('tr');
   tableBody.appendChild(bodyRow);
 
@@ -55,15 +55,15 @@ Guest.prototype.body = function(){
     var guestSelections = document.createElement('td');
     if (i === 0) {
       guestSelections.textContent = this.winner;
-    } else if (i === 1){
+    } else if (i === 1) {
       guestSelections.textContent = this.mvp;
     } else if (i === 2) {
       guestSelections.textContent = this.teamLeftScoreGuess;
     } else if (i === 3) {
       guestSelections.textContent = this.teamRightScoreGuess;
     }
-    
-    bodyRow.appendChild(guestSelections);      
+
+    bodyRow.appendChild(guestSelections);
   }
 
 };
@@ -81,22 +81,22 @@ var form = document.getElementById('votingForm');
 form.addEventListener('submit', handleSubmit);
 Guest.testing = [];
 
-function handleSubmit(event){
+function handleSubmit(event) {
   event.preventDefault();
-  
+
   var testing = event.target;
-  
+
   var name = testing.name.value;
   var winner = testing.winner.value;
   var mvp = testing.mvp.value;
   var tlsg = parseInt(testing.teamLeftScoreGuess.value);
   var trsg = parseInt(testing.teamRightScoreGuess.value);
-  
+
   var newGuest = new Guest(name, winner, mvp, tlsg, trsg);
   Guest.testing.push(newGuest);
   // newGuestObject.push(newGuest);
   render();
-  
+
   //// Works here but also does not updat LS...because LS
   for (var i = 0; i < Guest.testing.length; i++) {
     Guest.testing[i].body();
@@ -108,25 +108,25 @@ function handleSubmit(event){
 
 function updateLocalStorage() {
   console.log('*** PUSHING GUEST.TESTING TO LOCALSTORAGE ***');
-    var arrayString = JSON.stringify(Guest.testing);
+  var arrayString = JSON.stringify(Guest.testing);
   localStorage.setItem('votingForm', arrayString);
   console.log('new local storage', arrayString);
 }
 
 function getLocalStorage() {
-  if(localStorage.length > 0){
+  if (localStorage.length > 0) {
     var storageData = localStorage.getItem('votingForm');
     console.log(storageData);
     var inputObjects = JSON.parse(storageData);
     console.log(inputObjects);
-    for(var i =0; i < inputObjects.length; i++) {
-      inputObjects[i] = new Guest(inputObjects[i].name,inputObjects[i].winner, inputObjects[i].mvp, inputObjects[i].teamLeftScoreGuess, inputObjects[i].teamRightScoreGuess);
+    for (var i = 0; i < inputObjects.length; i++) {
+      inputObjects[i] = new Guest(inputObjects[i].name, inputObjects[i].winner, inputObjects[i].mvp, inputObjects[i].teamLeftScoreGuess, inputObjects[i].teamRightScoreGuess);
     }
     Guest.testing = inputObjects;
   }
 }
 getLocalStorage();
-for(var i = 0; i < Guest.testing.length; i++){
+for (var i = 0; i < Guest.testing.length; i++) {
   console.log('local storage', Guest.testing[i]);
   Guest.testing[i].body();
 }
@@ -141,17 +141,19 @@ var kcWins = 0;
 function graphData() {
   sfWins = 0;
   kcWins = 0;
-  for(var i = 0; i<Guest.testing.length; i++){
-    if (Guest.testing[i].winner === 'Forty Nines'){
-      sfWins++;}
-    else if (Guest.testing[i].winner === 'Chefs'){
-      kcWins++;}
+  for (var i = 0; i < Guest.testing.length; i++) {
+    if (Guest.testing[i].winner === 'Forty Nines') {
+      sfWins++;
+    }
+    else if (Guest.testing[i].winner === 'Chefs') {
+      kcWins++;
+    }
     console.log('sf', sfWins, 'kc', kcWins);
   }
 }
 
 
-function renderChart(){
+function renderChart() {
   var labelData = ['San Francisco', 'Kansas City'];
   var pollData = [sfWins, kcWins];
   console.log('ld', labelData);
@@ -167,16 +169,16 @@ function renderChart(){
       datasets: [{
         label: 'Team',
         data: pollData,
-        backgroundColor: ['rgba(199, 56, 69, 78)','rgba(239, 184, 52, 94)']
+        backgroundColor: ['rgba(199, 56, 69, 78)', 'rgba(239, 184, 52, 94)']
         //backgroundColor: ['red', 'yellow']
       }]
     },
     options: {
       legend: {
-        labels:{
+        labels: {
           fontColor: '#fff'
         }
-},
+      },
       scales: {
         yAxes: [{
           ticks: {
@@ -185,18 +187,7 @@ function renderChart(){
         }]
       }
     }
-  //   chartOptions =  { 
-  //     responsive: true, 
-  //     maintainAspectRatio: false, 
-  //     fontColor: 'red',
-  //     options:{
-  //         legend:{
-  //             labels:{
-  //                 fontColor:'white';//change the color
-  //             }
-  //         }
-  //     }
-  // };
+
   });
 }
 
