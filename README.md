@@ -1,5 +1,7 @@
 # sports-party
 
+[Sports Party Site](https://suetarazi.github.io/sports-party/)
+
 ## Site Developers Extraorinaire
 - Corey DeJong
 - Brandon Gibbs
